@@ -1,8 +1,10 @@
+import { expect, vi } from 'vitest';
+
 import { Course } from '../../../../../src/Contexts/Mooc/Courses/domain/Course';
 import { CourseRepository } from '../../../../../src/Contexts/Mooc/Courses/domain/CourseRepository';
 
 export class CourseRepositoryMock implements CourseRepository {
-	private readonly mockSave = jest.fn();
+	private readonly mockSave = vi.fn();
 
 	async save(course: Course): Promise<void> {
 		await this.mockSave(course);
